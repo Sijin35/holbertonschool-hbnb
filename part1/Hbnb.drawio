@@ -1,17 +1,26 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="-YqvBdWR7zro55ob8_1u">
-    <mxGraphModel dx="1533" dy="1135" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="964" dy="663" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="hUDn5ZNKDxH-Q9J3WyCt-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;strong style=&quot;box-sizing: border-box; font-weight: bold; scrollbar-color: rgb(95, 99, 104) rgb(49, 54, 60); color: rgb(220, 233, 249); font-family: aktiv-grotesk, sans-serif; font-size: 14px; text-align: start; background-color: rgb(32, 36, 38);&quot;&gt;Presentation Layer (Services, API):&lt;/strong&gt;&lt;span style=&quot;color: rgb(220, 233, 249); font-family: aktiv-grotesk, sans-serif; font-size: 14px; text-align: start; background-color: rgb(32, 36, 38);&quot;&gt;&amp;nbsp;&lt;/span&gt;" vertex="1">
-          <mxGeometry height="120" width="220" x="40" y="430" as="geometry" />
+          <mxGeometry height="81.82" width="150" x="40" y="258.18" as="geometry" />
         </mxCell>
         <mxCell id="hUDn5ZNKDxH-Q9J3WyCt-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;strong style=&quot;box-sizing: border-box; font-weight: bold; scrollbar-color: rgb(95, 99, 104) rgb(49, 54, 60); color: rgb(220, 233, 249); font-family: aktiv-grotesk, sans-serif; font-size: 14px; text-align: start; background-color: rgb(32, 36, 38);&quot;&gt;Business Logic Layer (Models):&lt;/strong&gt;" vertex="1">
-          <mxGeometry height="120" width="215" x="310" y="430" as="geometry" />
+          <mxGeometry height="80.93" width="145" x="390" y="259.07" as="geometry" />
         </mxCell>
         <mxCell id="hUDn5ZNKDxH-Q9J3WyCt-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;strong style=&quot;box-sizing: border-box; font-weight: bold; scrollbar-color: rgb(95, 99, 104) rgb(49, 54, 60); color: rgb(220, 233, 249); font-family: aktiv-grotesk, sans-serif; font-size: 14px; text-align: start; background-color: rgb(32, 36, 38);&quot;&gt;Persistence Layer:&lt;/strong&gt;" vertex="1">
-          <mxGeometry height="120" width="230" x="570" y="430" as="geometry" />
+          <mxGeometry height="88.7" width="170" x="640" y="251.3" as="geometry" />
+        </mxCell>
+        <mxCell id="nDmQYND_-jVZAFU5oeKq-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;div style=&quot;text-align: start;&quot;&gt;&lt;font color=&quot;#dce9f9&quot; face=&quot;aktiv-grotesk, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(32, 36, 38);&quot;&gt;&lt;b&gt;Booking&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="65.46" width="120" x="230" y="126.36" as="geometry" />
+        </mxCell>
+        <mxCell id="nDmQYND_-jVZAFU5oeKq-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#dce9f9&quot; face=&quot;aktiv-grotesk, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(32, 36, 38);&quot;&gt;&lt;b&gt;View available services&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="65.46" width="120" x="230" y="274.54" as="geometry" />
+        </mxCell>
+        <mxCell id="nDmQYND_-jVZAFU5oeKq-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#dce9f9&quot; face=&quot;aktiv-grotesk, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(32, 36, 38);&quot;&gt;&lt;b&gt;Comment&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="65.46" width="120" x="230" y="436.36" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
