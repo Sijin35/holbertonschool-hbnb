@@ -52,8 +52,14 @@
         <mxCell id="knfjWByLyRWuwcYY4K55-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#dce9f9&quot; face=&quot;aktiv-grotesk, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(32, 36, 38);&quot;&gt;&lt;b&gt;Properties&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="65.46" width="120" x="55" y="630" as="geometry" />
         </mxCell>
+        <mxCell id="knfjWByLyRWuwcYY4K55-16" edge="1" parent="1" source="knfjWByLyRWuwcYY4K55-9" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" target="knfjWByLyRWuwcYY4K55-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="knfjWByLyRWuwcYY4K55-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#dce9f9&quot; face=&quot;aktiv-grotesk, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(32, 36, 38);&quot;&gt;&lt;b&gt;Database&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="65.46" width="120" x="665" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="knfjWByLyRWuwcYY4K55-14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#dce9f9&quot; face=&quot;aktiv-grotesk, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(32, 36, 38);&quot;&gt;&lt;b&gt;Part 3 of project&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="65.46" width="120" x="665" y="540" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
