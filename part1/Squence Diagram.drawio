@@ -360,10 +360,10 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="68ymO_Sjnk0znAFFcrqy-1" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="User" vertex="1">
-          <mxGeometry height="300" width="100" x="1830" y="55" as="geometry" />
+          <mxGeometry height="505" width="100" x="1830" y="55" as="geometry" />
         </mxCell>
         <mxCell id="DhhXMbWg79UAvs8icK3S-2" parent="68ymO_Sjnk0znAFFcrqy-1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
-          <mxGeometry height="170" width="10" x="45" y="75" as="geometry" />
+          <mxGeometry height="335" width="10" x="45" y="75" as="geometry" />
         </mxCell>
         <mxCell id="DhhXMbWg79UAvs8icK3S-4" parent="68ymO_Sjnk0znAFFcrqy-1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
           <mxGeometry height="40" width="10" x="50" y="80" as="geometry" />
