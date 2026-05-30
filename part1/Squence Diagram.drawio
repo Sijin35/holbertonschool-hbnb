@@ -108,6 +108,9 @@
         <mxCell id="D9VVy2PClrj1YHKQl20F-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Process Request" vertex="1">
           <mxGeometry height="30" width="60" x="350" y="130" as="geometry" />
         </mxCell>
+        <mxCell id="7Z1T8ZwHcXeBXznP6D7j-19" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="Void of testing" vertex="1">
+          <mxGeometry height="80" width="80" x="190" y="380" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
