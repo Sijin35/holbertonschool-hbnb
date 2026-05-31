@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram id="ltbA6WWBp3LRaSq-5ORm" name="Page-1">
-    <mxGraphModel dx="2875" dy="2235" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1325" dy="1685" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -294,6 +294,15 @@
         </mxCell>
         <mxCell id="NVnYnh1C7RbwFzcAmvRw-11" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;" value="YESSSSS" vertex="1">
           <mxGeometry height="80" width="80" x="390" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="F-buNAIXQoBEJiY6PFLg-1" parent="1" style="html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.select;fillColor=#0080f0;strokeColor=#ffffff;sketch=0;" value="" vertex="1">
+          <mxGeometry height="30" width="31" x="374" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="F-buNAIXQoBEJiY6PFLg-2" parent="1" style="html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.select;fillColor=#0080f0;strokeColor=#ffffff;sketch=0;" value="" vertex="1">
+          <mxGeometry height="30" width="31" x="410" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="F-buNAIXQoBEJiY6PFLg-3" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;" value="NOOOOOO" vertex="1">
+          <mxGeometry height="80" width="80" x="565" y="190" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
