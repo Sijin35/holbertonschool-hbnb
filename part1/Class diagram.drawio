@@ -202,7 +202,7 @@
         <mxCell id="Qc-xl6jv6DDGC1pgQnW8-4" parent="Qc-xl6jv6DDGC1pgQnW8-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="rating: int" vertex="1">
           <mxGeometry height="26" width="160" y="128" as="geometry" />
         </mxCell>
-        <mxCell id="NVnYnh1C7RbwFzcAmvRw-5" parent="Qc-xl6jv6DDGC1pgQnW8-1" style="rounded=0;whiteSpace=wrap;html=1;align=left;" value="&amp;nbsp;+ star_review()" vertex="1">
+        <mxCell id="NVnYnh1C7RbwFzcAmvRw-5" parent="Qc-xl6jv6DDGC1pgQnW8-1" style="rounded=0;whiteSpace=wrap;html=1;align=left;" value="&amp;nbsp;+ star_review()&lt;div&gt;&amp;nbsp;+ comments()&lt;/div&gt;" vertex="1">
           <mxGeometry height="60" width="160" y="154" as="geometry" />
         </mxCell>
         <mxCell id="Qc-xl6jv6DDGC1pgQnW8-24" edge="1" parent="1" source="TRXBdDGxTs-NISdQ8IEX-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.005;entryY=0.07;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=none;startFill=0;endArrow=none;endFill=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="TRXBdDGxTs-NISdQ8IEX-23">
@@ -282,6 +282,9 @@
         </mxCell>
         <mxCell id="xa9CocleF6afOvuUqr7u-24" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFF88,#FFFF63);strokeColor=#36393d;fontColor=light-dark(#000000,#000000);" value="&lt;div&gt;Remove comments maybe? What is everyone&#39;s opinion?&lt;/div&gt;" vertex="1">
           <mxGeometry height="110" width="230" x="415" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="NVnYnh1C7RbwFzcAmvRw-11" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;" value="YESSSSS" vertex="1">
+          <mxGeometry height="80" width="80" x="390" y="190" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
