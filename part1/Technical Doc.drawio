@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="4TK_IxDSeI-HzrAVb5h_">
-    <mxGraphModel dx="689" dy="882" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1362" dy="559" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -36,6 +36,9 @@
         </mxCell>
         <mxCell id="ZfJwDptoVW3bVI8tmmg0-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="The User class represents the description of the users interacting with the presentation layer of the HBnB system." vertex="1">
           <mxGeometry height="30" width="739" x="52" y="1910" as="geometry" />
+        </mxCell>
+        <mxCell id="g8OnkpdD9VU2AHoXN7dE-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="In this Class Diagram, we summarize the definitions of each class with expected attributes and methods.&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="729" x="61" y="1720" as="geometry" />
         </mxCell>
         <mxCell id="ZfJwDptoVW3bVI8tmmg0-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="The Place class represents the description of the properties listed by the host on the HBnB system." vertex="1">
           <mxGeometry height="30" width="739" x="56.51" y="1960" as="geometry" />
