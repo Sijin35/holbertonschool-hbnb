@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="2KrW7VEhyqmw7Nx4Ttr-">
-    <mxGraphModel dx="1856" dy="1028" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2184" dy="1209" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -10,22 +10,22 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="vZHe2jEZJALmbnLdjFB--6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;strong style=&quot;box-sizing: border-box; font-weight: bold; scrollbar-color: rgb(95, 99, 104) rgb(49, 54, 60); color: rgb(220, 233, 249); font-family: aktiv-grotesk, sans-serif; font-size: 14px; text-align: start; background-color: rgb(32, 36, 38);&quot;&gt;Presentation Layer &lt;/strong&gt;&lt;span style=&quot;box-sizing: border-box; scrollbar-color: rgb(95, 99, 104) rgb(49, 54, 60); color: rgb(220, 233, 249); font-family: aktiv-grotesk, sans-serif; font-size: 14px; text-align: start; background-color: rgb(32, 36, 38);&quot;&gt;&lt;i&gt;(ServiceAPI):&lt;/i&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(220, 233, 249); font-family: aktiv-grotesk, sans-serif; font-size: 14px; text-align: start; background-color: rgb(32, 36, 38);&quot;&gt;&lt;i&gt;(Client_Interface):&amp;nbsp;&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="81.82" width="150" x="20" y="231.38" as="geometry" />
+          <mxGeometry height="81.82" width="150" x="10" y="230.94" as="geometry" />
         </mxCell>
-        <mxCell id="vZHe2jEZJALmbnLdjFB--8" edge="1" parent="1" source="vZHe2jEZJALmbnLdjFB--10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="vZHe2jEZJALmbnLdjFB--39">
+        <mxCell id="vZHe2jEZJALmbnLdjFB--8" edge="1" parent="1" source="vZHe2jEZJALmbnLdjFB--10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="vZHe2jEZJALmbnLdjFB--39">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="vZHe2jEZJALmbnLdjFB--10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;box-sizing: border-box; scrollbar-color: rgb(95, 99, 104) rgb(49, 54, 60); color: rgb(220, 233, 249); font-family: aktiv-grotesk, sans-serif; font-size: 14px; text-align: start; background-color: rgb(32, 36, 38);&quot;&gt;&lt;b&gt;Business Logic Layer &lt;/b&gt;&lt;i style=&quot;&quot;&gt;(ModelClasses):&lt;/i&gt;&lt;/span&gt;" vertex="1">
-          <mxGeometry height="80.93" width="175" x="385" y="232.26999999999998" as="geometry" />
+          <mxGeometry height="80.93" width="175" x="350" y="232.26999999999998" as="geometry" />
         </mxCell>
         <mxCell id="vZHe2jEZJALmbnLdjFB--11" edge="1" parent="1" source="vZHe2jEZJALmbnLdjFB--12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="vZHe2jEZJALmbnLdjFB--102">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="vZHe2jEZJALmbnLdjFB--12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;strong style=&quot;box-sizing: border-box; font-weight: bold; scrollbar-color: rgb(95, 99, 104) rgb(49, 54, 60); color: rgb(220, 233, 249); font-family: aktiv-grotesk, sans-serif; font-size: 14px; text-align: start; background-color: rgb(32, 36, 38);&quot;&gt;Persistence Layer:&lt;/strong&gt;" vertex="1">
-          <mxGeometry height="88.7" width="170" x="765" y="228.39" as="geometry" />
+          <mxGeometry height="88.7" width="170" x="352.5" y="470" as="geometry" />
         </mxCell>
         <mxCell id="vZHe2jEZJALmbnLdjFB--29" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#dce9f9&quot; face=&quot;aktiv-grotesk, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(32, 36, 38);&quot;&gt;&lt;b&gt;Database&lt;br&gt;Storage&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="65.46" width="120" x="790" y="447" as="geometry" />
+          <mxGeometry height="65.46" width="120" x="377.5" y="717" as="geometry" />
         </mxCell>
         <mxCell id="vZHe2jEZJALmbnLdjFB--35" edge="1" parent="1" source="vZHe2jEZJALmbnLdjFB--37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="vZHe2jEZJALmbnLdjFB--10">
           <mxGeometry relative="1" as="geometry">
@@ -38,39 +38,39 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="vZHe2jEZJALmbnLdjFB--37" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#dce9f9&quot; face=&quot;aktiv-grotesk, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(32, 36, 38);&quot;&gt;&lt;b&gt;Facade Pattern&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="65.46" width="120" x="220" y="239.11999999999995" as="geometry" />
+          <mxGeometry height="65.46" width="120" x="200" y="239.99999999999994" as="geometry" />
         </mxCell>
-        <mxCell id="vZHe2jEZJALmbnLdjFB--38" edge="1" parent="1" source="vZHe2jEZJALmbnLdjFB--39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="vZHe2jEZJALmbnLdjFB--12">
+        <mxCell id="vZHe2jEZJALmbnLdjFB--38" edge="1" parent="1" source="vZHe2jEZJALmbnLdjFB--39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="vZHe2jEZJALmbnLdjFB--12">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="vZHe2jEZJALmbnLdjFB--39" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#fff2cc;strokeColor=#d6b656;" value="Database Operations" vertex="1">
-          <mxGeometry height="65.46" width="120" x="590" y="240.01" as="geometry" />
+          <mxGeometry height="65.46" width="120" x="377.5" y="360" as="geometry" />
         </mxCell>
         <mxCell id="vZHe2jEZJALmbnLdjFB--101" edge="1" parent="1" source="vZHe2jEZJALmbnLdjFB--102" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="vZHe2jEZJALmbnLdjFB--29">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1080" y="460" as="targetPoint" />
+            <mxPoint x="680" y="730" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="vZHe2jEZJALmbnLdjFB--102" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#dce9f9&quot; face=&quot;aktiv-grotesk, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(32, 36, 38);&quot;&gt;&lt;b&gt;Checking for access right&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="65.46" width="120" x="790" y="350" as="geometry" />
+          <mxGeometry height="65.46" width="120" x="377.5" y="620" as="geometry" />
         </mxCell>
         <mxCell id="vZHe2jEZJALmbnLdjFB--105" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="User" vertex="1">
-          <mxGeometry height="17.92" width="65" x="62.5" y="178.39" as="geometry" />
+          <mxGeometry height="17.92" width="65" x="47.5" y="172.07999999999998" as="geometry" />
         </mxCell>
         <mxCell id="WIsYPLuYnzwIEppj4hiX-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFF88,#FFFF63);strokeColor=#36393d;fontColor=light-dark(#000000,#000000);" value="User sends API-Calls through a Client_Interface&lt;br&gt;for-which is sent through Business Logic Layer&amp;nbsp;" vertex="1">
           <mxGeometry height="200.88" width="120" x="20" y="330" as="geometry" />
         </mxCell>
         <mxCell id="WIsYPLuYnzwIEppj4hiX-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFF88,#FFFF63);strokeColor=#36393d;fontColor=light-dark(#000000,#000000);" value="In Business Logic Layer, Classes are currently abstracted with &#39;ModelClasses&#39;" vertex="1">
-          <mxGeometry height="200.88" width="120" x="412.5" y="20" as="geometry" />
+          <mxGeometry height="200.88" width="120" x="377.5" y="20" as="geometry" />
         </mxCell>
         <mxCell id="WIsYPLuYnzwIEppj4hiX-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFF88,#FFFF63);strokeColor=#36393d;fontColor=light-dark(#000000,#000000);" value="Classes and their methods from BLL,&lt;br&gt;send through actions into the Persistence Layer.&lt;br&gt;Persistence Layer contains the Database where private and protected data are kept. sent, removed, edited and returned" vertex="1">
-          <mxGeometry height="200.88" width="120" x="790" y="20" as="geometry" />
+          <mxGeometry height="200.88" width="120" x="525" y="470" as="geometry" />
         </mxCell>
         <mxCell id="jcnPVMmyGXToek09mdS7-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#FFF200);fontColor=light-dark(#000000,#000000);" value="The Facade Pattern Abstracts all method actions away from API" vertex="1">
-          <mxGeometry height="60" width="120" x="220" y="130" as="geometry" />
+          <mxGeometry height="60" width="120" x="200" y="130" as="geometry" />
         </mxCell>
         <mxCell id="Krj6psJROP2RNWawIp8D-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=light-dark(#FFFFFF,#FFCE02);align=center;verticalAlign=middle;rounded=0;fontColor=light-dark(#000000,#000000);" value="Search, save, add, return&lt;br&gt;and delete" vertex="1">
-          <mxGeometry height="110" width="80" x="610" y="118.38999999999999" as="geometry" />
+          <mxGeometry height="110" width="80" x="520" y="337.73" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
