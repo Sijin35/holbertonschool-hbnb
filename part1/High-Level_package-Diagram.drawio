@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="2KrW7VEhyqmw7Nx4Ttr-">
-    <mxGraphModel dx="884" dy="490" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1856" dy="1028" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -74,6 +74,9 @@
         </mxCell>
         <mxCell id="W_o3C3PsjH2Ao98SipCb-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Business Logic Layer&lt;div&gt;Contain core business logic and the main components for business to operate.&lt;/div&gt;" vertex="1">
           <mxGeometry height="50" width="530" x="270" y="790" as="geometry" />
+        </mxCell>
+        <mxCell id="Krj6psJROP2RNWawIp8D-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=light-dark(#FFFFFF,#FFCE02);align=center;verticalAlign=middle;rounded=0;fontColor=light-dark(#000000,#000000);" value="Search, save, add, return&lt;br&gt;and delete" vertex="1">
+          <mxGeometry height="110" width="80" x="990" y="188.39" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
