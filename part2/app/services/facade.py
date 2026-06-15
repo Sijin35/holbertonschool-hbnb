@@ -22,6 +22,12 @@ class HBnBFacade:
     def get_user_by_email(self, email):
         return self.user_repo.get_by _attribute('email', email)
 
+    def get_all_users(self):
+        pass
+
+    def update_users(self, user_id, user_data):
+        pass
+
     # Amenities related methods
     def create_amenity(self, amenity_date):
         # Placeholder
