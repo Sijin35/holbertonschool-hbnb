@@ -38,3 +38,13 @@ class UserResource(Resource):
         if not user:
             return {'error': 'User not found'}, 404
         return {'id': user.id, 'first_name': user.first_name, 'last_name': user.last_name, 'email': user.email}, 200
+
+@api.route('/api/v1//users', methods=["GET"])
+class UserAll(Resource):
+    @api.response(200, 'User list retrieved successfully')
+    @api.response(404, 'User list not found')
+    def get_all(self):
+        user_list = facade.get_all_users()
+        if not user_list:
+            return {'error': 'User list not found'}, 404
+        return user_list
