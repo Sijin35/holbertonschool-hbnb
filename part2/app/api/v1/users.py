@@ -39,7 +39,7 @@ class UserResource(Resource):
             return {'error': 'User not found'}, 404
         return {'id': user.id, 'first_name': user.first_name, 'last_name': user.last_name, 'email': user.email}, 200
 
-@api.route('/api/v1//users', methods=["GET"])
+@api.route('/users', methods=["GET"])
 class UserAll(Resource):
     @api.response(200, 'User list retrieved successfully')
     @api.response(404, 'User list not found')
