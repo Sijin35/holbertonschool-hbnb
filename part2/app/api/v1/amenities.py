@@ -41,13 +41,14 @@ class AmenityList(Resource):
 class AmenityResource(Resource):
     @api.response(200, 'Amenity details retrieved successfully')
     @api.response(404, 'Amenity not found')
+    @api.marshal_with(amenity_response)
     def get(self, amenity_id):
         """Get amenity details by ID"""
         # Placeholder for the logic to retrieve an amenity by ID
         amenity = facade.get_amenity(amenity_id)
         if not amenity:
             return {'error': 'Amenity not found'}, 404
-        return amenity, 200
+        return amenity
 
     @api.expect(amenity_model)
     @api.response(200, 'Amenity updated successfully')
@@ -58,6 +59,8 @@ class AmenityResource(Resource):
         # Placeholder for the logic to update an amenity by ID
         amenity_data = api.payload
         amenity = facade.update_amenity(amenity_id, amenity_data)
-        if not amenity:
+
+        if amenity_id is None:
             return {'error': 'Amenity not found'}, 404
-        return amenity
+
+        return {"message": "Amenity updated successfully"}, 200
