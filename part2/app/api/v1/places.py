@@ -1,6 +1,7 @@
 from flask_restx import Namespace, Resource, fields
 from app.services import facade
 from app.models.place import Place
+from app.models.amenity import Amenity
 
 api = Namespace('places', description='Place operations')
 
@@ -72,11 +73,14 @@ class PlaceList(Resource):
             params_field = ["title", "description", "price", "latitude", "longitude"]
             place_params = {p_f:data[p_f] for p_f in params_field}
             place_params["owner"] = user
-            created_place = facade.create_place(place_params).__dict__
+            new_place = facade.create_place(place_params)
+            for amenity_data in data["amenities"]:
+                new_amenity = Amenity(amenity_data)
+                new_place.add_amenity(new_amenity)
+            created_place = new_place.__dict__
         except Exception as e:
             return {"error": str(e)}, 400
         fields = ["id", "title", "description", "price", "latitude", "longitude"]
-        print(created_place["owner"].__dict__["id"])
         place_dictionary = {field: created_place[field] for field in fields}
         place_dictionary["owner_id"] = created_place["owner"].__dict__["id"]
         return place_dictionary, 201
