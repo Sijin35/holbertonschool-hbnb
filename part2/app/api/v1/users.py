@@ -28,7 +28,7 @@ class UserList(Resource):
 
         new_user = facade.create_user(user_data)
         return {'id': new_user.id, 'first_name': new_user.first_name, 'last_name': new_user.last_name, 'email': new_user.email}, 201
-   
+
     @api.response(200, 'List of users retrieved successfully')
     def get(self):
         """Retrieves all users"""
@@ -58,9 +58,5 @@ class UserResource(Resource):
        user = facade.get_user(user_id)
        if not user:
            return {'error': 'User not found'}, 404
-       
-       user.first_name = user_data.get("first_name", user.first_name)
-       user.last_name = user_data.get("last_name", user.last_name)
-       user.email = user_data.get("email", user.email)
 
        return {'success': 'User updated'}, 200
