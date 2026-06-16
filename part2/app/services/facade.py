@@ -33,7 +33,7 @@ class HBnBFacade:
 
     # Amenities related methods
     def create_amenity(self, amenity_date):
-        amenity = Amenity(**amenity_data)
+        amenity = Amenity(**amenity_date)
         self.amenity_repo.add(amenity)
         return amenity
 
@@ -52,6 +52,7 @@ class HBnBFacade:
     def create_place(self, place_data):
         place = Place(**place_data)
         self.place_repo.add(place)
+        return place
 
     def get_place(self, place_id):
         return self.place_repo.get(place_id)
