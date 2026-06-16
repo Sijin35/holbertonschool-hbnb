@@ -18,7 +18,7 @@ class AmenityList(Resource):
     @api.expect(amenity_model)
     @api.response(201, 'Amenity successfully created')
     @api.response(400, 'Invalid input data')
-    @api.marshal_with(amenity_response, code=201)
+    @api.marshal_with(amenity_response)
     def post(self):
         """Register a new amenity"""
         # Placeholder for the logic to register a new amenity
