@@ -36,8 +36,13 @@ class PlaceList(Resource):
     def post(self):
         """Register a new place"""
         data = api.payload
-        facade.create_place(data)
-        return "success", 201
+        try:
+            created_place = facade.create_place(data).__dict__
+        except Exception as e:
+            return {"error": str(e)}, 400
+        fields = ["id", "title", "description", "price", "latitude", "longitude", "owner"]
+        place_dictionary = {"owner_id" if field == "owner" else field: created_place[field] for field in fields}
+        return place_dictionary, 201
 
     @api.response(200, 'List of places retrieved successfully')
     def get(self):
@@ -45,8 +50,9 @@ class PlaceList(Resource):
         data = facade.get_all_places()
         if not all(isinstance(p, Place) for p in data):
             raise TypeError("This is a place list")
-        all_places_title = [place.title for place in data]
-        return all_places_title, 200
+        fields = ["id", "title", "latitude", "longitude"]
+        res_dic = [{field: d.__dict__[field] for field in fields} for d in data]
+        return res_dic, 200
 
 @api.route('/<place_id>')
 class PlaceResource(Resource):

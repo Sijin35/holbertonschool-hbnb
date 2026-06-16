@@ -50,6 +50,15 @@ class HBnBFacade:
 
     # Place realted methods
     def create_place(self, place_data):
+        if not isinstance(place_data["price"], float):
+            raise TypeError("price data need to be of type float") 
+        if place_data["price"] < 0:
+            raise ValueError("price need to be positive number")
+        if place_data["latitude"] < -90 or place_data["latitude"] > 90:
+            raise ValueError("latitude must be between -90 and 90")
+        if place_data["longitude"] < -180 or place_data["longitude"] > 180:
+            raise ValueError("longitude must be between -180 and 180")
+
         place = Place(**place_data)
         self.place_repo.add(place)
         return place
