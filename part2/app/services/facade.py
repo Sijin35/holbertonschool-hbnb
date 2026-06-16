@@ -29,7 +29,7 @@ class HBnBFacade:
         return self.user_repo.get_all()
 
     def update_users(self, user_id, user_data):
-        pass
+        return self.user_repo.update(user_id, user_data)
 
     # Amenities related methods
     def create_amenity(self, amenity_date):
