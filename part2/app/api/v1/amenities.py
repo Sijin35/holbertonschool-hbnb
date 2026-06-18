@@ -24,7 +24,7 @@ class AmenityList(Resource):
         amenity_data = api.payload
         try:
             amenity = facade.create_amenity(amenity_data)
-        except Exception as e:
+        except ValueError:
             return {'error': 'Input is invalid'}, 400
         return amenity, 201
 
