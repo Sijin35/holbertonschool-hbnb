@@ -70,8 +70,10 @@ class HBnBFacade:
         return self.place_repo.get_all()
 
     def update_place(self, place_id, place_data):
-        # Placeholder
-        pass
+        if not self.place_repo.get(place_id):
+            return False
+        self.place_repo.update(place_id, place_data)
+        return True
 
     # Review realated methods
     def create_review(self, review_data):

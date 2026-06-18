@@ -9,7 +9,7 @@ api = Namespace('amenities', description='Amenity operations')
 amenity_model = api.model('Amenity', {
     'name': fields.String(required=True, description='Name of the amenity')
 })
-amenity_response = api.model('amenityResponse', {
+amenity_response = api.model('AmenityResponse', {
     'id': fields.String,
     'name': fields.String,
 })

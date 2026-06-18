@@ -104,7 +104,7 @@ class PlaceResource(Resource):
         """Get place details by ID"""
         data = facade.get_place(place_id)
         if data == None:
-            return "Place dose not exist", 200
+            return {"error": "Place dose not exist"}, 200
         return data, 200
 
     @api.expect(place_model)
@@ -113,5 +113,10 @@ class PlaceResource(Resource):
     @api.response(400, 'Invalid input data')
     def put(self, place_id):
         """Update a place's information"""
-        # Placeholder for the logic to update a place by ID
-        pass
+        data = api.payload
+        if data["title"] == "":
+            return {"error": "empty title"}, 400
+        is_updated = facade.update_place(place_id, data)
+        if not is_updated:
+            return {"error": "place not founded"}, 404
+        return {"message": "success"}, 200
