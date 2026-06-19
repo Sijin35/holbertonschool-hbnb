@@ -45,6 +45,8 @@ class HBnBFacade:
     def create_amenity(self, amenity_data):
         name = amenity_data.get("name")
 
+        if any(char.isdigit() for char in name):
+            raise ValueError("Cannot input numbers")
         if not name or not isinstance(name, str):
             raise ValueError("Invalid amenity name")
 
