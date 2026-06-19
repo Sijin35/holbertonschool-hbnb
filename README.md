@@ -66,6 +66,9 @@ Documents:
   - pip install -r requirements.txt (to install the required packages)
   - python3 run.py (to run the server)
   - User:
-        * Creation: curl -X POST http://localhost:5000/api/v1/users/ \
+
+    * Creation:
+
+    curl -X POST http://localhost:5000/api/v1/users/ \
   -H "Content-Type: application/json" \
   -d '{"first_name": "John", "last_name": "Doe", "email": "john.doe@example.com"}'
