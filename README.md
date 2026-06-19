@@ -83,4 +83,24 @@ Documents:
       curl -X PUT http://localhost:5000/api/v1/users/<user_id> \
       -H "Content-Type: application/json" \
       -d '{"first_name": "John", "last_name": "Cena", "email": "john.cena@example.com"}'
+
+    
+  - Amenity:
+ 
+    * Creation:
+
+       curl -X POST http://localhost:5000/api/v1/amenities/ \
+       -H "Content-Type: application/json" \
+       -d '{"name": "Sink"}'
+
+    * Retrieval:
+   
+      curl -X GET http://localhost:5000/api/v1/amenities/ (for all amenities)
+      curl -X GET http://localhost:5000/api/v1/amenities/<amenity_id> (for specific amenity based on id)
+
+    * Update:
+
+      curl -X GET http://localhost:5000/api/v1/amenities/<amenity_id> \
+      -H "Content-Type: application/json" \
+      -d '{"name": "Cubards"}'
       
