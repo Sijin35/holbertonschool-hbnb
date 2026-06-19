@@ -62,7 +62,7 @@ Documents:
 
   To get started and using the implementation, please follow the steps listed below:
 
-  - source venv/bin/activate
+  - source venv/bin/activate (to run in a virtual environment outside of Holberton sandbox)
   - pip install -r requirements.txt (to install the required packages)
   - python3 run.py (to run the server)
   - User:
@@ -72,3 +72,15 @@ Documents:
       curl -X POST http://localhost:5000/api/v1/users/ \
       -H "Content-Type: application/json" \
       -d '{"first_name": "John", "last_name": "Doe", "email": "john.doe@example.com"}'
+
+    * Retrieval:
+
+      curl -X GET http://localhost:5000/api/v1/users/ (for all users)
+      curl -X GET http://localhost:5000/api/v1/users/<user_id> (for specific user based on id)
+
+    * Update:
+      
+      curl -X PUT http://localhost:5000/api/v1/users/<user_id> \
+      -H "Content-Type: application/json" \
+      -d '{"first_name": "John", "last_name": "Cena", "email": "john.cena@example.com"}'
+      
