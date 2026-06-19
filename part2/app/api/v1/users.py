@@ -1,4 +1,4 @@
-from flask_restx import Namespace, Resource, fields
+from flask_restx import Namespace, Resource, fields, marshal
 from app.services import facade
 from app.models.user import User
 
@@ -10,6 +10,13 @@ user_model = api.model('User', {
     'last_name': fields.String(required=True, description='Last name of the user'),
     'email': fields.String(required=True, description='Email of the user')
 })
+
+user_output = api.model('User', {
+        'id': fields.String,
+        'first_name': fields.String,
+        'last_name': fields.String,
+        'email': fields.String
+        })
 
 @api.route('/')
 class UserList(Resource):
@@ -25,38 +32,43 @@ class UserList(Resource):
         existing_user = facade.get_user_by_email(user_data['email'])
         if existing_user:
             return {'error': 'Email already registered'}, 400
-
-        new_user = facade.create_user(user_data)
-        return {'id': new_user.id, 'first_name': new_user.first_name, 'last_name': new_user.last_name, 'email': new_user.email}, 201
+        try:
+            new_user = facade.create_user(user_data)
+            return marshal(new_user, user_output), 201
+        except ValueError as e:
+            return {"error": str(e)}, 400
+ 
+        return new_user, 201
 
     @api.response(200, 'List of users retrieved successfully')
+    @api.marshal_list_with(user_output)
     def get(self):
         """Retrieves all users"""
         user_list = facade.get_all_users()
-        if not all(isinstance(u, User) for u in user_list):
-            raise TypeError("This is user list")
-        fields = ["id", "first_name", "last_name", "email"]
-        user_dic = [{field: d.__dict__[field] for field in fields} for d in user_list]
-        return user_dic, 200
+        #if not all(isinstance(u, User) for u in user_list):
+           # raise TypeError("This is user list")
+        #fields = ["id", "first_name", "last_name", "email"]
+        #user_dic = [{field: d.__dict__[field] for field in fields} for d in user_list]
+        return user_list, 200
 
 @api.route('/<user_id>')
 class UserResource(Resource):
     @api.response(200, 'User details retrieved successfully')
     @api.response(404, 'User not found')
+    @api.marshal_with(user_output)
     def get(self, user_id):
         """Get user details by ID"""
         user = facade.get_user(user_id)
         if not user:
             return {'error': 'User not found'}, 404
-        return {'id': user.id, 'first_name': user.first_name, 'last_name': user.last_name, 'email': user.email}, 200
+        return user, 200
 
     @api.response(400, 'Invalid input')
     def put(self, user_id):
        """Update user data"""
        user_data = api.payload
 
-       user = facade.get_user(user_id)
-       if not user:
-           return {'error': 'User not found'}, 404
+       user = facade.update_users(user_id, user_data)
+       #if not user:return {'error': 'User not found'}, 404
 
        return {'success': 'User updated'}, 200
