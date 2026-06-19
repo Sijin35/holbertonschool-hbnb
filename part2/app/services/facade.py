@@ -33,6 +33,11 @@ class HBnBFacade:
         return self.user_repo.update(user_id, user_data)
     # Amenities related methods
     def create_amenity(self, amenity_data):
+        name = amenity_data.get("name")
+
+        if not name or not isinstance(name, str):
+            raise ValueError("Invalid amenity name")
+
         amenity = Amenity(**amenity_data)
         self.amenity_repo.add(amenity)
         return amenity
