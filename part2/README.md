@@ -185,4 +185,7 @@ Listed below are some example trial codes that can be used to check the function
 
    Test files have also been created to test each of the end points which can be done by using:
 
-   - python3 -m app.tests.testusers -v 
+   - python3 -m app.tests.testusers -v
+   - python3 -m app.tests.testamenities -v
+   - python3 -m app.tests.testplace -v
+   - python3 -m app.tests.testreviews -v
