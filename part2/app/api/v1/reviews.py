@@ -36,6 +36,10 @@ class ReviewList(Resource):
         review_data = api.payload
         place = facade.get_place(review_data.get("place_id"))
         user = facade.get_user(review_data.get("user_id"))
+
+        if not place or not user:
+            return {"error": "place or user dose not exist"}, 400
+
         fields = ["text", "rating"]
         review_params = {f:review_data[f] for f in fields}
         review_params["place"] = place
@@ -57,14 +61,12 @@ class ReviewList(Resource):
 class ReviewResource(Resource):
     @api.response(200, 'Review details retrieved successfully')
     @api.response(404, 'Review not found')
-    @api.marshal_with(review_output)
     def get(self, review_id):
         """Get review details by ID"""
         review = facade.get_review(review_id)
-
-        if not review:
+        if review == None:
             return {'error': 'Review not found'}, 404
-        return review, 200
+        return marshal(review, review_output), 200
 
     @api.expect(review_model)
     @api.response(200, 'Review updated successfully')
