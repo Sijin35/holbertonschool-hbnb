@@ -58,6 +58,8 @@ Documents:
 
     Contains test files to test each of the end points of the 4 classes.
 
+	Please navigate into the "part2" folder to see the listed examples of trail codes that you can use to test the design.
+
   Operation of part 2
 
   To get started and using the implementation, please follow the steps listed below:
