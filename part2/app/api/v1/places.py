@@ -3,7 +3,7 @@ from app.services import facade
 from app.models.place import Place
 from app.models.amenity import Amenity
 from app.models.review import Review
-from app.api.v1.reviews import review_model
+from app.api.v1.reviews import review_model, review_list_output
 
 api = Namespace('places', description='Place operations')
 
@@ -115,3 +115,19 @@ class PlaceResource(Resource):
         if not is_updated:
             return {"error": "place not founded"}, 404
         return {"message": "success"}, 200
+    
+@api.route('/<place_id>/reviews')
+class PlaceReviewList(Resource):
+    @api.response(200, 'List of reviews for the place retrieved successfully')
+    @api.response(404, 'Place not found')
+    def get(self, place_id):
+        """Get all reviews for a specific place"""
+        place = facade.get_place(place_id)
+        if not place:
+            return {"error": "place not found"}, 400
+        reviews = place.reviews
+        if reviews or len(reviews) == 0:
+            return {"message": "no review found"}, 200
+        
+        return marshal(reviews, review_list_output), 200
+        

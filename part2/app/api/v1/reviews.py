@@ -46,6 +46,7 @@ class ReviewList(Resource):
         review_params["user"] = user
         try:
             new_review = facade.create_review(review_params)
+            place.add_review(new_review)
             return marshal(new_review, review_output), 201
         except ValueError as e:
             return {"error": str(e)}, 400
@@ -75,8 +76,9 @@ class ReviewResource(Resource):
     def put(self, review_id):
         """Update a review's information"""
         review_data = api.payload
-
         review = facade.update_review(review_id, review_data)
+        if not review:
+            return {'error': "review is not found"}, 400
 
         return {'success': "Review update"}, 200
 
