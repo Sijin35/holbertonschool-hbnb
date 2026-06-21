@@ -72,7 +72,11 @@ Documents:
 	```
       curl -X POST http://localhost:5000/api/v1/users/ \
       -H "Content-Type: application/json" \
-      -d '{"first_name": "John", "last_name": "Doe", "email": "john.doe@example.com"}'
+      -d '{
+	"first_name": "John", 
+	"last_name": "Doe", 
+	"email": "john.doe@example.com"
+	}'
 	```
     * Retrieval:
 
@@ -81,20 +85,24 @@ Documents:
       curl -X GET http://localhost:5000/api/v1/users/<user_id> (for specific user based on id)
 
     * Update:
-      
+      	```
       curl -X PUT http://localhost:5000/api/v1/users/<user_id> \
       -H "Content-Type: application/json" \
-      -d '{"first_name": "John", "last_name": "Cena", "email": "john.cena@example.com"}'
-
+      -d '{
+	"first_name": "John", 
+	"last_name": "Cena", 
+	"email": "john.cena@example.com"
+	}'
+	```
     
   - Amenity:
  
     * Creation:
-
+	```
        curl -X POST http://localhost:5000/api/v1/amenities/ \
        -H "Content-Type: application/json" \
        -d '{"name": "Sink"}'
-
+	```
     * Retrieval:
 
       curl -X GET http://localhost:5000/api/v1/amenities/ (for all amenities)
@@ -102,11 +110,11 @@ Documents:
       curl -X GET http://localhost:5000/api/v1/amenities/<amenity_id> (for specific amenity based on id)
 
     * Update:
-
+	```
       curl -X GET http://localhost:5000/api/v1/amenities/<amenity_id> \
       -H "Content-Type: application/json" \
       -d '{"name": "Cubards"}'
-      
+ 	```     
   - Place:
 
   - Review:
