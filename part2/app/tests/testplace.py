@@ -1,35 +1,43 @@
 #!/usr/bin/python3
 """Testing place endpoint"""
+import uuid
 import unittest
 from app import create_app
 
 
 class TestPlaceEndpoints(unittest.TestCase):
 
-    def setUP(self):
+    def setUp(self):
         self.app = create_app()
         self.client = self.app.test_client()
 
-        user_response = self.client.post('/api/v1/user/', json={
+        email = f"john-{uuid.uuid4()}@example.com"
+
+        user_response = self.client.post('/api/v1/users/', json={
             "first_name": "John",
             "last_name": "Doe",
-            "email": "john@example.com"
+            "email": email
+        })
+        amenity_response = self.client.post('/api/v1/amenities/', json={
+            "name": "Kitchen"
         })
 
+        self.amenity = amenity_response.get_json()["id"]
         self.user_id = user_response.get_json()["id"]
     def test_create_place(self):
-        response = self.client.post('/api/v1/place/', json={
+        response = self.client.post('/api/v1/places/', json={
             "title": "Cozy Apartment",
             "description": "A nice place to stay",
             "price": 100.0,
             "latitude": 37.7749,
             "longitude": -122.4194,
-            "owner_id": self.user_id
+            "owner_id": self.user_id,
+            "amenities": [self.amenity]
             })
         self.assertEqual(response.status_code, 201)
 
     def test_create_place_invalid_data(self):
-        response = self.client.post('/api/v1/place/', json={
+        response = self.client.post('/api/v1/places/', json={
             "title": "",
             "description": "",
             "price": -1,
