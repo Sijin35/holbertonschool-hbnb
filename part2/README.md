@@ -182,5 +182,7 @@ Listed below are some example trial codes that can be used to check the function
     ```   
       curl -X DELETE http://localhost:5000/api/v1/reviews/<review_id>
 	```
-    
 
+   Test files have also been created to test each of the end points which can be done by using:
+
+   - python3 -m app.tests.testusers -v 
