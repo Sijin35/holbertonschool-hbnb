@@ -4,7 +4,7 @@ Getting started in making the Hbnb project!
 
 ## Contents
 
-## Part 1
+### Part 1
 
 Documents:
 
@@ -36,7 +36,7 @@ Documents:
 
   Shows the overall content of part 1 in one file. Contains all the diagrams with appropriate explaination.
 
-## Part 2
+### Part 2
 
   This part contains the implementation of the designs from Part 1 which has been divided into 5 sections.
 
@@ -62,7 +62,7 @@ Documents:
 
 Please navigate into the "part2" folder to see the listed examples of trial codes that you can use to test the design.
 
-## Authors
+### Authors
 
 - 	Aaron Regterschot
 - 	Ethan Hill
