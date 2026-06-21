@@ -87,7 +87,7 @@ Listed below are some example trial codes that can be used to check the function
 
     * Creation:
 
-	For owner_id, please use the generated user_id when creating user.
+	For owner_id, please use the generated user_id when creating user. Amenities can be left empty or the previously created amenity can be added. Please enclose them within "" when adding the amenitites.
 
 	```
  	curl -X POST http://localhost:5000/api/v1/places/ \
@@ -98,7 +98,7 @@ Listed below are some example trial codes that can be used to check the function
   		"price": 100.0,
   		"latitude": 37.7749,
   		"longitude": -122.4194,
-  		"owner_id": ""
+  		"owner_id": "",
   		"amenities": []
 		}'
 	```
