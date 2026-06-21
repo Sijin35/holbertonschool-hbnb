@@ -82,18 +82,18 @@ Documents:
       For all users
 	```
       curl -X GET http://localhost:5000/api/v1/users/ (for all users)
-      	```
+ 	```
       For specific user based on id
 	```
       curl -X GET http://localhost:5000/api/v1/users/<user_id>
 	```
 
     * Update:
-      	```
+    ```
       curl -X PUT http://localhost:5000/api/v1/users/<user_id> \
       -H "Content-Type: application/json" \
       -d '{
-	"first_name": "John", 
+    "first_name": "John", 
 	"last_name": "Cena", 
 	"email": "john.cena@example.com"
 	}'
@@ -111,7 +111,7 @@ Documents:
       For all amenities
 	```
       curl -X GET http://localhost:5000/api/v1/amenities/
-      	```
+ 	```
       For specific amenity based on id
 	```
       curl -X GET http://localhost:5000/api/v1/amenities/<amenity_id>
