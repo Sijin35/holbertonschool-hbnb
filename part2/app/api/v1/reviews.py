@@ -1,6 +1,7 @@
 from flask_restx import Namespace, Resource, fields, marshal
 from app.services import facade
 from app.models.review import Review
+from flask_jwt_extended import jwt_required, get_jwt_identity
 
 api = Namespace('reviews', description='Review operations')
 
@@ -28,6 +29,7 @@ review_list_output = api.model('Review List Output', {
 
 @api.route('/')
 class ReviewList(Resource):
+    @jwt_required()
     @api.expect(review_model)
     @api.response(201, 'Review successfully created')
     @api.response(400, 'Invalid input data')
@@ -51,6 +53,7 @@ class ReviewList(Resource):
         except ValueError as e:
             return {"error": str(e)}, 400
 
+    @jwt_required()
     @api.response(200, 'List of reviews retrieved successfully')
     @api.marshal_list_with(review_list_output)
     def get(self):
@@ -60,6 +63,7 @@ class ReviewList(Resource):
 
 @api.route('/<review_id>')
 class ReviewResource(Resource):
+    @jwt_required()
     @api.response(200, 'Review details retrieved successfully')
     @api.response(404, 'Review not found')
     def get(self, review_id):
@@ -69,6 +73,7 @@ class ReviewResource(Resource):
             return {'error': 'Review not found'}, 404
         return marshal(review, review_output), 200
 
+    @jwt_required()
     @api.expect(review_model)
     @api.response(200, 'Review updated successfully')
     @api.response(404, 'Review not found')
@@ -82,6 +87,7 @@ class ReviewResource(Resource):
 
         return {'success': "Review update"}, 200
 
+    @jwt_required()
     @api.response(200, 'Review deleted successfully')
     @api.response(404, 'Review not found')
     def delete(self, review_id):

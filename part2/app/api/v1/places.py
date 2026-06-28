@@ -4,6 +4,7 @@ from app.models.place import Place
 from app.models.amenity import Amenity
 from app.models.review import Review
 from app.api.v1.reviews import review_model, review_list_output
+from flask_jwt_extended import jwt_required, get_jwt_identity
 
 api = Namespace('places', description='Place operations')
 
@@ -59,13 +60,14 @@ place_post_model = api.model(
 
 @api.route('/')
 class PlaceList(Resource):
+    @jwt_required()
     @api.expect(place_model)
     @api.response(201, 'Place successfully created')
     @api.response(400, 'Invalid input data')
     def post(self):
         """Register a new place"""
         data = api.payload
-        user = facade.get_user(data["owner_id"])
+        user = facade.get_user(get_jwt_identity())
         if user == None:
             return {"message": "no user found"}, 400
         try:
@@ -92,6 +94,7 @@ class PlaceList(Resource):
 
 @api.route('/<place_id>')
 class PlaceResource(Resource):
+    @jwt_required()
     @api.response(200, 'Place details retrieved successfully')
     @api.response(404, 'Place not found')
     @api.marshal_with(place_id_model)
@@ -102,6 +105,7 @@ class PlaceResource(Resource):
             return {"error": "Place dose not exist"}, 200
         return data, 200
 
+    @jwt_required()
     @api.expect(place_model)
     @api.response(200, 'Place updated successfully')
     @api.response(404, 'Place not found')
@@ -111,6 +115,11 @@ class PlaceResource(Resource):
         data = api.payload
         if data["title"] == "":
             return {"error": "empty title"}, 400
+        founded_place = facade.get_place(place_id)
+        if founded_place is None:
+            return {"error": "place not founded"}, 404
+        if founded_place.owner.id != get_jwt_identity():
+            return {"error": "only owner of the place is allowed to modify"}, 400
         is_updated = facade.update_place(place_id, data)
         if not is_updated:
             return {"error": "place not founded"}, 404
