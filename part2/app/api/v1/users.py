@@ -54,13 +54,12 @@ class UserList(Resource):
 class UserResource(Resource):
     @api.response(200, 'User details retrieved successfully')
     @api.response(404, 'User not found')
-    @api.marshal_with(user_output)
     def get(self, user_id):
         """Get user details by ID"""
         user = facade.get_user(user_id)
         if not user:
             return {'error': 'User not found'}, 404
-        return user, 200
+        return marshal(user, user_output) , 200
 
     @api.response(400, 'Invalid input')
     def put(self, user_id):
