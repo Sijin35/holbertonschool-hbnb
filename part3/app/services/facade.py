@@ -1,40 +1,43 @@
 #!/usr/bin/python3
 
 
-from app.persistence.repository import InMemoryRepository
+from app.persistence.repository import SQLAlchemyRepository
 from app.models.user import User
 from app.models.place import Place
 from app.models.amenity import Amenity
 from app.models.review import Review
+from app.services.repositories.user_repository import UserRepository
+from app.extensions import db
 
 class HBnBFacade:
     def __init__(self):
-        self.user_repository = SQLAlchemyRepository(User)  # Switched to SQLAlchemyRepository
+        self.user_repo = UserRepository()  # Switched to SQLAlchemyRepository
         self.place_repository = SQLAlchemyRepository(Place)
         self.review_repository = SQLAlchemyRepository(Review)
         self.amenity_repository = SQLAlchemyRepository(Amenity)
-
+        
     # User related methods
     def create_user(self, user_data):
-        first_name = user_data.get("first_name")
-        last_name = user_data.get("last_name")
-        email = user_data.get("email")
+        # first_name = user_data.get("first_name")
+        # last_name = user_data.get("last_name")
+        # email = user_data.get("email")
 
-        if not all([first_name, last_name]) or not all(isinstance(x, str) for x in [first_name, last_name]):
-            raise ValueError("Invalid name fields")
+        # if not all([first_name, last_name]) or not all(isinstance(x, str) for x in [first_name, last_name]):
+        #     raise ValueError("Invalid name fields")
 
-        if not email or not isinstance(email, str) or "@" not in email:
-            raise ValueError("Invalid email")
+        # if not email or not isinstance(email, str) or "@" not in email:
+        #     raise ValueError("Invalid email")
 
         user = User(**user_data)
-        self.user_repository.add(user)
+        user.hash_password(user_data['password'])
+        self.user_repo.add(user)
         return user
 
     def get_user(self, user_id):
-        return self.user_repository.get(user_id)
+        return self.user_repo.get(user_id)
 
     def get_user_by_email(self, email):
-        return self.user_repository.get_by_attribute('email', email)
+        return self.user_repo.get_user_by_email(email)
 
     def get_all_users(self):
         return self.user_repository.get_all()
