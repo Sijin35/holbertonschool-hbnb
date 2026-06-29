@@ -9,10 +9,10 @@ from app.models.review import Review
 
 class HBnBFacade:
     def __init__(self):
-        self.user_repo = InMemoryRepository()
-        self.place_repo = InMemoryRepository()
-        self.review_repo = InMemoryRepository()
-        self.amenity_repo = InMemoryRepository()
+        self.user_repository = SQLAlchemyRepository(User)  # Switched to SQLAlchemyRepository
+        self.place_repository = SQLAlchemyRepository(Place)
+        self.review_repository = SQLAlchemyRepository(Review)
+        self.amenity_repository = SQLAlchemyRepository(Amenity)
 
     # User related methods
     def create_user(self, user_data):
@@ -27,20 +27,20 @@ class HBnBFacade:
             raise ValueError("Invalid email")
 
         user = User(**user_data)
-        self.user_repo.add(user)
+        self.user_repository.add(user)
         return user
 
     def get_user(self, user_id):
-        return self.user_repo.get(user_id)
+        return self.user_repository.get(user_id)
 
     def get_user_by_email(self, email):
-        return self.user_repo.get_by_attribute('email', email)
+        return self.user_repository.get_by_attribute('email', email)
 
     def get_all_users(self):
-        return self.user_repo.get_all()
+        return self.user_repository.get_all()
 
     def update_users(self, user_id, user_data):
-        return self.user_repo.update(user_id, user_data)
+        return self.user_repository.update(user_id, user_data)
     # Amenities related methods
     def create_amenity(self, amenity_data):
         name = amenity_data.get("name")
@@ -51,14 +51,14 @@ class HBnBFacade:
             raise ValueError("Invalid amenity name")
 
         amenity = Amenity(**amenity_data)
-        self.amenity_repo.add(amenity)
+        self.amenity_repository.add(amenity)
         return amenity
 
     def get_amenity(self, amenity_id):
-        return self.amenity_repo.get(amenity_id)
+        return self.amenity_repository.get(amenity_id)
 
     def get_all_amenities(self):
-        return self.amenity_repo.get_all()
+        return self.amenity_repository.get_all()
 
     def update_amenity(self, amenity_id, amenity_data):
         name = amenity_data.get("name")
@@ -67,7 +67,7 @@ class HBnBFacade:
             raise ValueError("Invalid name input")
         if any(char.isdigit() for char in name):
             raise ValueError("Cannot input numbers")
-        return self.amenity_repo.update(amenity_id, amenity_data)
+        return self.amenity_repository.update(amenity_id, amenity_data)
 
     # Place realted methods
     def create_place(self, place_data):
@@ -81,19 +81,19 @@ class HBnBFacade:
             raise ValueError("longitude must be between -180 and 180")
 
         place = Place(**place_data)
-        self.place_repo.add(place)
+        self.place_repository.add(place)
         return place
 
     def get_place(self, place_id):
-        return self.place_repo.get(place_id)
+        return self.place_repository.get(place_id)
 
     def get_all_places(self):
-        return self.place_repo.get_all()
+        return self.place_repository.get_all()
 
     def update_place(self, place_id, place_data):
         if not self.place_repo.get(place_id):
             return False
-        self.place_repo.update(place_id, place_data)
+        self.place_repository.update(place_id, place_data)
         return True
 
     # Review realated methods
@@ -103,29 +103,29 @@ class HBnBFacade:
 
         review = Review(**review_data)
 
-        self.review_repo.add(review)
+        self.review_repository.add(review)
         return review
 
     def get_review(self, review_id):
-        return self.review_repo.get(review_id)
+        return self.review_repository.get(review_id)
 
     def get_all_reviews(self):
-        return self.review_repo.get_all()
+        return self.review_repository.get_all()
 
     def get_reviews_by_place(self, place_id):
-        return self.review_repo.get(place_id)
+        return self.review_repository.get(place_id)
 
     def update_review(self, review_id, review_data):
-        if not self.review_repo.get(review_id):
+        if not self.review_repository.get(review_id):
             return False
-        self.review_repo.update(review_id, review_data)
+        self.review_repository.update(review_id, review_data)
         return True
 
     def delete_review(self, review_id):
-        review = self.review_repo.get(review_id)
+        review = self.review_repository.get(review_id)
 
         if not review:
             raise ValueError("Review not found")
 
-        self.review_repo.delete(review_id)
+        self.review_repository.delete(review_id)
         return review
