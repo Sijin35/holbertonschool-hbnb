@@ -1,14 +1,18 @@
 from app.models.base_model import BaseModel
 from app.extensions import db
 from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy.orm import relationship
 
 class Place(BaseModel):
+    __tablename__ = "places"
+
     title = db.Column(db.String(50), nullable = False)
     description = db.Column(db.String(254), nullable = False)
     price = db.Column(db.Float, nullable = False)
     latitude = db.Column(db.Float, nullable = False)
     longitude = db.Column(db.Float, nullable = False)
-    user_id = Column(Integer, ForeignKey('users.id'), nullable = False)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable = False)
+    children = relationship("Amenity", backref="places", lazy=True)
 
     def add_review(self, review):
         """Add a review to the place."""
