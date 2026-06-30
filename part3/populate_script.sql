@@ -1,16 +1,17 @@
--- DELETE FROM users;
--- DELETE FROM places;
--- DELETE FROM amenities;
--- DELETE FROM place_amenity;
+DELETE FROM users;
+DELETE FROM places;
+DELETE FROM amenities;
+DELETE FROM place_amenity;
 
 -- DROP TABLE amenities;
 
 -- ALTER TABLE amenities DROP COLUMN place_id;
 
 INSERT INTO users (id, first_name, last_name, email, password, is_admin) VALUES
-('9b17d3fd-4e2b-4c9a-b0db-9e3b50e3f001', 'John', 'Doe', 'john@example.com', 'hashed_password_1', 1),
-('9b17d3fd-4e2b-4c9a-b0db-9e3b50e3f002', 'Jane', 'Smith', 'jane@example.com', 'hashed_password_2', 0),
-('9b17d3fd-4e2b-4c9a-b0db-9e3b50e3f003', 'Alice', 'Brown', 'alice@example.com', 'hashed_password_3', 0);
+('9b17d3fd-4e2b-4c9a-b0db-9e3b50e3f001', 'John', 'Doe', 'john@example.com', '$2y$10$87o.xFePu5q847uwJjfPL.GBE5jvYM.pVKl6ZIi/Pl5MOXZ8YjGGm', 1),
+('9b17d3fd-4e2b-4c9a-b0db-9e3b50e3f002', 'Jane', 'Smith', 'jane@example.com', '$2y$10$qM5AWuTp3slrwIurNUmVe.AXbfjWgRZGMRfE3PhnBAzHyh.sl98CC', 0),
+('9b17d3fd-4e2b-4c9a-b0db-9e3b50e3f003', 'Alice', 'Brown', 'alice@example.com', '$2y$10$ETNOKqNTfNym3y7lyn7Sw.fBjjyeViqWypxFOE2/MTffwhEoIfpAe', 0),
+('36c9050e-ddd3-4c3b-9731-9f487208bbc1', 'Admin', 'HBnB', 'admin@hbnb.io', '$2y$10$i207gAEK9fOUmU1fpp/eGOIAMToVocjzSM.Kxh2bla9JMDlog.e9S', 1);
 
 INSERT INTO places (id, title, description, price, latitude, longitude, user_id) VALUES
 (
@@ -30,6 +31,15 @@ INSERT INTO places (id, title, description, price, latitude, longitude, user_id)
     -37.8140,
     144.9650,
     '9b17d3fd-4e2b-4c9a-b0db-9e3b50e3f002'
+);
+(
+    'b9b81b15-6540-4eea-961a-5c39c5baba2e',
+    'Town house',
+    'Close to Mine field',
+    120.00,
+    -30.8140,
+    122.9650,
+    '36c9050e-ddd3-4c3b-9731-9f487208bbc1'
 );
 
 INSERT INTO amenities (id, name) VALUES
