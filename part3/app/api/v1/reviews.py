@@ -24,7 +24,7 @@ review_output = api.model('Review', {
 review_list_output = api.model('Review List Output', {
     'id': fields.String,
     'text': fields.String,
-    'rating': fields.Integer,  
+    'rating': fields.Integer,
 })
 
 @api.route('/')
@@ -39,7 +39,7 @@ class ReviewList(Resource):
         place = facade.get_place(review_data.get("place_id"))
         if place is None:
             return {"error": "Place not found"}, 400
-        
+
         user = facade.get_user(get_jwt_identity())
 
         if get_jwt_identity() == place.owner.id:
@@ -89,7 +89,7 @@ class ReviewResource(Resource):
         review_data = api.payload
         founded_review = facade.get_review(review_id)
         if get_jwt_identity() != founded_review.user.id:
-            {"error": "Users can only modify reviews they created"}
+            return {"error": "Users can only modify reviews they created"}
         review = facade.update_review(review_id, review_data)
         if not review:
             return {'error': "review is not found"}, 400

@@ -65,8 +65,11 @@ class UserResource(Resource):
     def put(self, user_id):
        """Update user data"""
        user_data = api.payload
-
-       user = facade.update_users(user_id, user_data)
+       same_user = facade.get_user(user_id)
+       if get_jwt_identity() != same_user:
+           return {"error": "User is not the correct User"}
+       if get_jwt_identity() == same_user:
+           facade.update_users(user_id, user_data)
        #if not user:return {'error': 'User not found'}, 404
 
        return {'success': 'User updated'}, 200
