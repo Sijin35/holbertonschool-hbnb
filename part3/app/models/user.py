@@ -13,7 +13,7 @@ class User(BaseModel):
     email = db.Column(db.String(120), nullable=False, unique=True)
     password = db.Column(db.String(128), nullable=False)
     is_admin = db.Column(db.Boolean, default=False)
-    children = relationship("Place", backref="users", lazy=True)
+    place_child = relationship("Place", backref="users", lazy=True)
 
     def hash_password(self, password):
         """Hashes the password before storing it."""
