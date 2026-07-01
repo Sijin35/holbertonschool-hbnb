@@ -62,6 +62,10 @@ Documents:
 
 Please navigate into the "part2" folder to see the listed examples of trial codes that you can use to test the design.
 
+## Part 3
+
+TBD
+
 ## Authors
 
 - 	Aaron Regterschot
