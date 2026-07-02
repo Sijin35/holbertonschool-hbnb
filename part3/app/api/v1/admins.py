@@ -2,7 +2,8 @@
 from app.services import facade
 from flask import request
 from flask_restx import Namespace, Resource
-from flask_jwt_extended import jwt_required, get_jwt
+from flask_jwt_extended import jwt_required, get_jwt, get_jwt_identity
+from app.extensions import bcrypt
 
 api = Namespace('admin', description='Admin operations')
 
@@ -43,13 +44,7 @@ class AdminUserModify(Resource):
         # Logic to update user details, including email and password
 
         updated_user = facade.update_users(user_id, data)
-        return {
-            "id": updated_user.id,
-            "first_name": updated_user.first_name,
-            "last_name": updated_user.last_name,
-            "email": updated_user.email,
-            "status": "User updated successfully"
-        }, 200
+        return {"status": "User updated successfully"}, 200
 
 @api.route('/users/')
 class AdminUserCreate(Resource):
@@ -122,11 +117,7 @@ class AdminAmenityModify(Resource):
             updated_amenity = facade.update_amenity(amenity_id, amenity_data)
         except ValueError as e:
             return {"error": str(e)}, 400
-        return {
-            "id": updated_amenity.id,
-            "name": updated_amenity.name,
-            "message": "Amenity updated successfully"
-        }, 200
+        return {"message": "Amenity updated successfully"}, 200
 
 @api.route('/places/<place_id>')
 class AdminPlaceModify(Resource):
@@ -152,15 +143,4 @@ class AdminPlaceModify(Resource):
 
         updated_place = facade.update_place(place_id, place_data)
 
-        return {
-            "id": updated_place.id,
-            "title": updated_place.title,
-            "description": updated_place.description,
-            "price": updated_place.price,
-            "latitude": updated_place.latitude,
-            "longitude": updated_place.longitude,
-            "owner_id": updated_place.owner_id,
-            "amenities": updated_place.amenities,
-            "reviews": updated_place.reviews,
-            "message": "Place updated successfully"
-        }, 200
+        return {"message": "Place updated successfully"}, 200
