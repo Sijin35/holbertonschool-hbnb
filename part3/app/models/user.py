@@ -1,9 +1,8 @@
- #!/usr/bin/python3
+#!/usr/bin/python3
 
 
 from app.models.base_model import BaseModel
 from app.extensions import bcrypt, db
-from sqlalchemy.orm import relationship
 
 class User(BaseModel):
     __tablename__ = 'users'

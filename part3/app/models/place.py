@@ -1,7 +1,5 @@
 from app.models.base_model import BaseModel
 from app.extensions import db
-from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.orm import relationship
 from app.models.place_amenity_associtation import place_amenity_association
 
 class Place(BaseModel):
@@ -14,8 +12,8 @@ class Place(BaseModel):
     longitude = db.Column(db.Float, nullable = False)
     owner_id = db.Column(db.String(36), db.ForeignKey("users.id"), nullable = False)
     owner = db.relationship("User", back_populates="places")
-    review_child = relationship("Review", backref='places', lazy=True)
-    place_amenity = relationship('Amenity', secondary=place_amenity_association, lazy='subquery',
+    reviews = db.relationship("Review", backref='places', lazy=True)
+    amenities = db.relationship('Amenity', secondary=place_amenity_association, lazy='subquery',
                                  backref=db.backref('places', lazy=True))
 
     def add_review(self, review):
