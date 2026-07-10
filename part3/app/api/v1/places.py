@@ -111,7 +111,6 @@ class PlaceResource(Resource):
         """Update a place's information"""
         data = api.payload
         data.pop("owner_id",None)
-        # print("data {}".format(data))
         if data["title"] == "":
             return {"error": "empty title"}, 400
         founded_place = facade.get_place(place_id)

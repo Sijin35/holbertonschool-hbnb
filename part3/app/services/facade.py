@@ -103,9 +103,7 @@ class HBnBFacade:
             available_amenities = self.get_available_amenities()
             amenities = [amenity for amenity in available_amenities if amenity.name in place_data["amenities"]]
             place_data["amenities"] = amenities
-        # place_data.pop("amenities", None)
         place_data.pop("reviews", None)
-        # print(place_data)
         
         self.place_repo.update(place_id, place_data)
         return True
