@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-
 from app.models.base_model import BaseModel
 from app.extensions import bcrypt, db
 

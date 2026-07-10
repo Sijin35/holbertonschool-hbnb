@@ -49,7 +49,6 @@ class AdminUserModify(Resource):
         if not current_user.get('is_admin'):
             return {'error': 'Admin privileges required'}, 403
 
-
         email = user_data.get('email')
         existing_user = facade.get_user_by_email(email)
         if email:

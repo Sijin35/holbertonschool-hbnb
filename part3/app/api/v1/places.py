@@ -28,7 +28,6 @@ place_model = api.model('Place', {
     'price': fields.Float(required=True, description='Price per night'),
     'latitude': fields.Float(required=True, description='Latitude of the place'),
     'longitude': fields.Float(required=True, description='Longitude of the place'),
-    'owner_id': fields.String(required=True, description='ID of the owner'),
     'amenities': fields.List(fields.String, required=True, description="List of amenities ID's"),
     'reviews': fields.List(fields.Nested(review_model), description='List of reviews')
 })
@@ -73,7 +72,7 @@ class PlaceList(Resource):
         try:
             params_field = ["title", "description", "price", "latitude", "longitude"]
             place_params = {p_f:data[p_f] for p_f in params_field}
-            place_params["owner"] = user
+            place_params["owner_id"] = user.id
             new_place = facade.create_place(place_params)
         except Exception as e:
             return {"error": str(e)}, 400
@@ -110,6 +109,8 @@ class PlaceResource(Resource):
     def put(self, place_id):
         """Update a place's information"""
         data = api.payload
+        data.pop("owner_id",None)
+        # print("data {}".format(data))
         if data["title"] == "":
             return {"error": "empty title"}, 400
         founded_place = facade.get_place(place_id)
