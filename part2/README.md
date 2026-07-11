@@ -22,11 +22,23 @@ To get started and using the implementation, please follow the steps listed belo
 	cd holbertonschool-hbnb/part2/
     ```
 
-- Activating virtual environment
+- Creating virtual environment
+
+  ```
+    python3 -m venv venv
+  ```
+
+- Activating virtual environment (if Windows)
+  
+	```
+    venv\Scripts\activate
+  ```
+
+- Activating virtual environment (if mac or linux)
   
 	```
     source venv/bin/activate
-  	```
+  ```
 
 - Ignore previous step if using Holberton sandbox (ubuntu_2204)
 
@@ -38,7 +50,7 @@ To get started and using the implementation, please follow the steps listed belo
 
 - Running the server
   
-	```
+	  ```
     python3 run.py
   	```
   
