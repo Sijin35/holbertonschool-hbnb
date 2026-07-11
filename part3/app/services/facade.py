@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 
-
-from app.persistence.repository import SQLAlchemyRepository
 from app.models.user import User
 from app.models.place import Place
 from app.models.amenity import Amenity

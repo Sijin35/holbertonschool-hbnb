@@ -72,8 +72,8 @@ class AdminUserModify(Resource):
                 return {"error": "empty password"}, 400
             user_data['password'] = bcrypt.generate_password_hash(user_data['password']).decode('utf-8')
 
-        updated_user = facade.update_users(user_id, user_data)
-        return {"id": updated_user.id, "message": "User updated successfully"}, 200
+        facade.update_users(user_id, user_data)
+        return {"message": "User updated successfully"}, 200
 
 @api.route('/users/')
 class AdminUserCreate(Resource):
