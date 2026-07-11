@@ -29,7 +29,7 @@ review_list_output = api.model('Review List Output', {
 @api.route('/')
 class ReviewList(Resource):
     @jwt_required()
-    @api.expect(review_model)
+    @api.expect(review_model, validation=True)
     @api.response(201, 'Review successfully created')
     @api.response(400, 'Invalid input data')
     def post(self):
