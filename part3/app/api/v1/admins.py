@@ -5,6 +5,7 @@ from flask import request
 from flask_restx import Namespace, Resource, fields, marshal
 from flask_jwt_extended import jwt_required, get_jwt, get_jwt_identity
 from app.extensions import bcrypt
+from app.api.v1.reviews import review_model
 
 api = Namespace('admin', description='Admin operations')
 
@@ -13,6 +14,16 @@ user_model = api.model('User', {
     'last_name': fields.String(required=True, description='Last name of the user'),
     'password': fields.String(required=True, description='User password'),
     'email': fields.String(required=True, description='Email of the user')
+})
+
+place_model = api.model('Place', {
+    'title': fields.String(required=True, description='Title of the place'),
+    'description': fields.String(description='Description of the place'),
+    'price': fields.Float(required=True, description='Price per night'),
+    'latitude': fields.Float(required=True, description='Latitude of the place'),
+    'longitude': fields.Float(required=True, description='Longitude of the place'),
+    'amenities': fields.List(fields.String, required=True, description="List of amenities ID's"),
+    'reviews': fields.List(fields.Nested(review_model), description='List of reviews')
 })
 
 amenity_model = api.model('Amenity', {
@@ -26,7 +37,7 @@ amenity_response = api.model('AmenityResponse', {
 
 @api.route('/users/<user_id>')
 class AdminUserModify(Resource):
-    # might not need api.expect so input isnt forced only an updated field is passed
+    @api.expect(user_model)
     @api.response(400, "Invalid input data")
     @api.response(200, "User updated successfully")
     @api.response(404, "user not found")
@@ -35,7 +46,7 @@ class AdminUserModify(Resource):
     def put(self, user_id):
 
         user_data = api.payload
-        """No data in payload fields"""
+        """No data"""
         if not user_data:
             return {"error": "Invalid input data"}, 400
 
@@ -61,7 +72,7 @@ class AdminUserModify(Resource):
                 return {"error": "empty password"}, 400
             user_data['password'] = bcrypt.generate_password_hash(user_data['password']).decode('utf-8')
 
-        updated_user = facade.update_user(user_id, user_data)
+        updated_user = facade.update_users(user_id, user_data)
         return {"id": updated_user.id, "message": "User updated successfully"}, 200
 
 @api.route('/users/')
@@ -74,7 +85,7 @@ class AdminUserCreate(Resource):
     def post(self):
 
         user_data = api.payload
-        """No data in user fields"""
+        """No data"""
         if not user_data:
             return {"error": "No data provided"}, 400
 
@@ -109,13 +120,9 @@ class AdminAmenityCreate(Resource):
     def post(self):
 
         amenity_data = api.payload
-        """No data in fields"""
+        """No data"""
         if not amenity_data:
             return {"error": "Invalid input data"}, 400
-
-        """empty string check"""
-        if "name" in amenity_data and amenity_data["name"] == "":
-            return {"error": "empty name field"}, 400
 
         current_user = get_jwt()
         """If not admin validation"""
@@ -131,7 +138,7 @@ class AdminAmenityCreate(Resource):
 
 @api.route('/amenities/<amenity_id>')
 class AdminAmenityModify(Resource):
-    # might not need api.expect so input isnt forced only an updated field is passed
+    @api.expect(amenity_model)
     @api.response(200, 'Amenity updated successfully')
     @api.response(404, 'Amenity not found')
     @api.response(400, 'Invalid input data')
@@ -140,13 +147,9 @@ class AdminAmenityModify(Resource):
     def put(self, amenity_id):
 
         amenity_data = api.payload
-        """No data in fields"""
+        """No data"""
         if not amenity_data:
             return {"error": "Invalid input data"}, 400
-
-        """empty string check"""
-        if "name" in amenity_data and amenity_data["name"] == "":
-            return {"error": "empty name field"}, 400
 
         current_user = get_jwt()
         if not current_user.get('is_admin'):
@@ -164,7 +167,7 @@ class AdminAmenityModify(Resource):
 
 @api.route('/places/<place_id>')
 class AdminPlaceModify(Resource):
-    # might not need api.expect so input isnt forced only an updated field is passed
+    @api.expect(place_model)
     @api.response(200, 'Place updated successfully')
     @api.response(404, 'Place not found')
     @api.response(400, 'Invalid input data')
@@ -173,13 +176,9 @@ class AdminPlaceModify(Resource):
     def put(self, place_id):
 
         place_data = api.payload
-        """No data in fields"""
+        """No data"""
         if not place_data:
             return {"error": "Invalid input data"}, 400
-
-        """Checking if title of place empty. if title is updating an empty string"""
-        if "title" in place_data and place_data["title"] == "":
-            return {"error": "empty title"}, 400
 
         current_user = get_jwt()
         # Set is_admin default to False if not exists
@@ -191,9 +190,11 @@ class AdminPlaceModify(Resource):
         place = facade.get_place(place_id)
         if place is None:
             return {"error": "place not found"}, 404
-
-        updated_place = facade.update_place(place_id, place_data)
-        """Update fail"""
-        if updated_place is None:
-            return {"error": "update failed"}, 400
+        try:
+            updated_place = facade.update_place(place_id, place_data)
+            """Update fail"""   
+            if not updated_place:
+                return {"error": "update failed"}, 400
+        except ValueError as e:
+            return {"error": str(e)}, 400
         return {"message": "Place updated successfully"}, 200
