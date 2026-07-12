@@ -1,4 +1,4 @@
-# Business logic and API implementation
+# Authorization and Database Implementation
 
 ## Requirements
 
@@ -224,6 +224,7 @@ Listed below are some example trial codes (curl) that can be used after running 
     After the login request has been made, user will be returned with an access token which can be used for accessing authenticated endpoints.
 
     Expected return:
+    
 	```
     {
       "access_token": "eyJhbGci..."
@@ -232,8 +233,9 @@ Listed below are some example trial codes (curl) that can be used after running 
 
     * Update:
 
-    - Please replace <user_id> with the id generated during user creation.
-    - Please replace access_token with the token received after the authorization.
+    Please replace <user_id> with the id generated during user creation.
+    
+    Please replace access_token with the token received after the authorization.
 
     ```
       curl -X PUT http://localhost:5000/api/v1/users/<user_id> \
@@ -321,8 +323,9 @@ Listed below are some example trial codes (curl) that can be used after running 
 
     Unlike regular user, admins can change both the email and password of a user.
 
-    - Please replace <user_id> with the id generated during user creation.
-    - Please replace access_token with the token received after the authorization.
+    Please replace <user_id> with the id generated during user creation.
+    
+    Please replace access_token with the token received after the authorization.
 
      ```
           curl -X PUT http://localhost:5000/api/v1/admins/users/<user_id> \
