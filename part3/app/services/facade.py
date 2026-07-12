@@ -83,7 +83,8 @@ class HBnBFacade:
             raise ValueError("latitude must be between -90 and 90")
         if place_data["longitude"] < -180 or place_data["longitude"] > 180:
             raise ValueError("longitude must be between -180 and 180")
-
+        place_data.pop("reviews", None)
+        place_data.pop("amenities", None)
         place = Place(**place_data)
         self.place_repo.add(place)
         return place
