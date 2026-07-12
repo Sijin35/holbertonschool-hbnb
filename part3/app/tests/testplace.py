@@ -3,7 +3,7 @@
 import uuid
 import unittest
 from app import create_app
-
+from flask_jwt_extended import create_access_token
 
 class TestPlaceEndpoints(unittest.TestCase):
 
@@ -16,34 +16,33 @@ class TestPlaceEndpoints(unittest.TestCase):
         user_response = self.client.post('/api/v1/users/', json={
             "first_name": "John",
             "last_name": "Doe",
-            "email": email
+            "email": email,
+            "password": "password123"
         })
-        amenity_response = self.client.post('/api/v1/amenities/', json={
-            "name": "Kitchen"
-        })
-
-        self.amenity = amenity_response.get_json()["id"]
+        
         self.user_id = user_response.get_json()["id"]
+        self.token = create_access_token(identity=self.user_id)
     def test_create_place(self):
-        response = self.client.post('/api/v1/places/', json={
+        response = self.client.post('/api/v1/places/', 
+            headers={"Authorization": f"Bearer {self.token}"},
+            json={
             "title": "Cozy Apartment",
             "description": "A nice place to stay",
-            "price": 100.0,
+            "price": 100.00,
             "latitude": 37.7749,
-            "longitude": -122.4194,
-            "owner_id": self.user_id,
-            "amenities": [self.amenity]
+            "longitude": -122.4194
             })
         self.assertEqual(response.status_code, 201)
 
     def test_create_place_invalid_data(self):
-        response = self.client.post('/api/v1/places/', json={
+        response = self.client.post('/api/v1/places/',
+            headers={"Authorization": f"Bearer {self.token}"},                         
+            json={
             "title": "",
             "description": "",
             "price": -1,
             "latitude": 190,
-            "longitude": -190,
-            "owner_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+            "longitude": -190
             })
         self.assertEqual(response.status_code, 400)
 
