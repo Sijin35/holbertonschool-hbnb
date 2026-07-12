@@ -1,8 +1,6 @@
 from flask_restx import Namespace, Resource, fields, marshal
 from app.services import facade
 from app.models.place import Place
-from app.models.amenity import Amenity
-from app.models.review import Review
 from app.api.v1.reviews import review_model, review_list_output
 from flask_jwt_extended import jwt_required, get_jwt_identity
 
@@ -27,9 +25,7 @@ place_model = api.model('Place', {
     'description': fields.String(description='Description of the place'),
     'price': fields.Float(required=True, description='Price per night'),
     'latitude': fields.Float(required=True, description='Latitude of the place'),
-    'longitude': fields.Float(required=True, description='Longitude of the place'),
-    'amenities': fields.List(fields.String, required=True, description="List of amenities ID's"),
-    'reviews': fields.List(fields.Nested(review_model), description='List of reviews')
+    'longitude': fields.Float(required=True, description='Longitude of the place')
 })
 place_id_model = api.model(
     'place_id',
