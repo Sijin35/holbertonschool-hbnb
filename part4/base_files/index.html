@@ -15,15 +15,36 @@
     </header>
     <main>
         <section id="filter">
-            <label for="price-filter">Max Price:</label>
-            <select id="price-filter">
-                <!-- Options will be populated dynamically -->
-            </select>
+            <h2>Available Places</h2>
+            <div class="filter-container">
+                <label for="price-filter">Max Price:</label>
+                <select id="price-filter">
+                    <!-- Options will be populated dynamically -->
+                </select>
+            </div>
         </section>
         <section id="places-list">
+            <div class="place-card">
+                <p>Place 1</p>
+                <p>Price per night: $100</p>
+                <button>View Details</button>
+            </div>
+            <div class="place-card">
+                <p>Place 2</p>
+                <p>Price per night: $150</p>
+                <button>View Details</button>
+            </div>
+            <div class="place-card">
+                <p>Place 3</p>
+                <p>Price per night: $200</p>
+                <button>View Details</button>
+            </div>
             <!-- List of places will be populated dynamically -->
         </section>
     </main>
     <script src="scripts.js"></script>
+    <footer>
+        <p>&copy; 2026 HBnB Evolution. All rights reserved</p>
+    </footer>
 </body>
 </html>
