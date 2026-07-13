@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    overflow: hidden;
 }
 
 body {
@@ -14,6 +15,38 @@ header {
     background-color: #333;
     color: #fff;
     padding: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+
+    padding: 1rem;
+}
+
+#login-link {
+    position: relative;
+    top: 30%;
+}
+
+#filter {
+    margin-bottom: 2rem;
+}
+
+#filter > h2{
+    text-align: center;
+    margin: 2rem;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 nav a {
@@ -24,4 +57,36 @@ nav a {
 
 main {
     padding: 2rem;
+}
+
+#places-list {
+    /* background-color: #333;
+    color: #fff; */
+
+    display: flex;
+    justify-content: space-between;
+    /* align-items: ce; */
+    height: 10rem;
+
+}
+
+.place-card {
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    justify-content: space-between;
+    
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+
+    width: 70%;
+    padding: 0.5rem;
+    border-radius: 5px;
 }
